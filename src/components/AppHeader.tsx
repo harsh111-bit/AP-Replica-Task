@@ -6,7 +6,7 @@ const AppHeader: React.FC = () => {
  return (
    <div className={'sticky top-0 z-50'}>
      <div className={'sticky top-0 z-50 block bg-gray-background shadow'}>
-     <div className={'mx-auto max-w-screen-4xl select-none'}>
+     <div className={'mx-auto max-w-screen-2xl select-none'}>
       <div className={'flex justify-between items-center py-1 tab:py-3'}>
          <div className={'flex cursor-pointer items-center pl-6 laptop:pl-10'}>
             <img src="/assets/images/ap-face.jpg" 
@@ -16,7 +16,7 @@ const AppHeader: React.FC = () => {
                  alt="Solutions-Logo"
                  className={'w-20 object-contain laptop:w-24'} />
          </div>
-         <div className={'hidden max-w-2xl flex-grow px-8 tab:block'}>
+         <div className={'hidden max-w-4xl flex-grow px-8 tab:block'}>
             <div className={'items-center rounded border border-gray-disabled shadow-sm'}>
                <div className={'relative'}>
                   <div className={'relative flex w-full flex-row'}>
