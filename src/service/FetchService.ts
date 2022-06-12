@@ -13,7 +13,18 @@ export const FetchService = {
                     content: res.data.details.description
                  }
              })
-             .catch((c) => console.log("FETCH-1 -->", c));
+             .catch((c) => console.log("ERROR-01", c));
+     },
+
+     fetchCourses: (): Promise<{coursesCount: number, courses: any[]} | void> => {
+       return axios.get('https://api.acharyaprashant.org/v2/legacy/courses/series/optuser/course-series-eeb9d3')
+            .then((res) => {
+                return {
+                  coursesCount: res.data.details.coursesCount,
+                  courses: res.data.courses
+                }
+            })
+            .catch((c) => console.log("ERROR-02", c));
      }
 
 

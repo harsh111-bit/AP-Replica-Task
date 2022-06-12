@@ -63,3 +63,25 @@
   font-family: Eczar,Inter var,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
 }
 
+.course-seq {
+  background-color: rgba(148, 163, 184, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+#part-pointer.course-seq:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 0;
+    width: 0;
+    border-top: 12px solid transparent;
+    border-right: 5px solid white;
+    border-bottom: 12px solid transparent;
+}
+
+.course-card-hover {
+  background-color: rgba(241, 245, 249, 1);
+}
+

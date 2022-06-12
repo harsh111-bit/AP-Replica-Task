@@ -3,6 +3,9 @@ import {useState, useEffect} from 'react';
 import { FetchService } from '../service/FetchService';
 import Details, { DetailsProps } from './Details';
 import { Spin } from 'antd';
+import Breadcrumbs from './Breadcrumbs';
+import SocialMedia from './SocialMedia';
+import Courses from './Courses';
 
 const Content: React.FC = () => {
 const [details, setDetails] = useState<DetailsProps | void>();
@@ -20,7 +23,13 @@ useEffect(() => {
  return (
     <div className={'flex flex-col'}>
       {isDetailsLoaded ? 
-       <Details title={details?.title} subtitle={details?.subtitle} content={details?.content} imageURL={details?.imageURL}/> :
+      <>
+       <Breadcrumbs title={details?.title}/>
+       <Details title={details?.title} subtitle={details?.subtitle} content={details?.content} imageURL={details?.imageURL}/> 
+       <SocialMedia/>
+       <Courses/>
+       </>
+       :
        <Spin />}
       
     </div>
