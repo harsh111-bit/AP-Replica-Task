@@ -1,12 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AppFooter from './components/AppFooter';
+import AppHeader from './components/AppHeader';
+import Content from './components/Content';
 import './styles.scss';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className="flex min-h-screen w-full flex-col justify-between">
+      <AppHeader/>
+      <Content/>
+      <AppFooter/>
     </div>
   );
 }

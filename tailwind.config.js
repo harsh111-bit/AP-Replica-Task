@@ -6,6 +6,10 @@ module.exports = {
   purge: [],
   theme: {
     extend: {},
+    screens: {
+      'tab': '768px',
+      'laptop': '1024px',
+    },
   },
   variants: {},
   plugins: [],
