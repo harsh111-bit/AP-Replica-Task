@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-export interface CourseCardInfo {
+interface CourseCardInfo {
     title: string | undefined;
     subtitle: string | undefined;
     amount: number | undefined;
     time: number | undefined;
-    seq: number | undefined;
+    seq?: number | undefined;
 }
 
 const CourseCard: React.FC<CourseCardInfo> = (props) => {

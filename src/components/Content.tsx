@@ -6,6 +6,7 @@ import { Spin } from 'antd';
 import Breadcrumbs from './Breadcrumbs';
 import SocialMedia from './SocialMedia';
 import Courses from './Courses';
+import FAQ from './FAQ';
 
 const Content: React.FC = () => {
 const [details, setDetails] = useState<DetailsProps | void>();
@@ -28,6 +29,7 @@ useEffect(() => {
        <Details title={details?.title} subtitle={details?.subtitle} content={details?.content} imageURL={details?.imageURL}/> 
        <SocialMedia/>
        <Courses/>
+       <FAQ/>
        </>
        :
        <Spin />}

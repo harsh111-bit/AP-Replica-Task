@@ -1,8 +1,17 @@
 import * as React from 'react';
+import {useState, useEffect} from 'react';
 import { MailOutlined, PhoneFilled, WhatsAppOutlined } from '@ant-design/icons';
+import { FetchService } from '../service/FetchService';
 
 const AppFooter: React.FC = () => {
-   const categories: string[] = ["Vedant - Upanishads", "Vedant - Bhagavad Gita", "Other Scriptures", "Saints and Masters", "Other streams", "Life Questions"];
+const [tags, setTags] = useState<any[] | void>();
+useEffect(() => {
+ FetchService.fetchTags()
+             .then((res) => {
+               setTags(res);
+             });
+}, []);
+
  return (
     <div className={'mt-12 bg-slate-50 px-4 pb-7 tab:px-0 tab:pt-10'}>
          <div className={'w-full flex flex-col text-gray-subtitle text-xl tab:flex tab:flex-row tab:justify-around'}>
@@ -23,10 +32,10 @@ const AppFooter: React.FC = () => {
                <div className={'font-semibold text-gray-title'}>
                   <span className={'font-en'}><span className={'font-en'}>EXPLORE CATEGORIES</span></span>
                </div>
-               {categories.map((c, i) => {
+               {tags?.map((c) => {
                   return (
-                     <div className={'hover:text-brand-600'} key={i}>
-                        <a href="#"> <span className={'font-en'}>{c}</span></a>
+                     <div className={'hover:text-brand-600'} key={c.tagId}>
+                        <a href="#"> <span className={'font-en'}>{c.name.english}</span></a>
                      </div>
                   )
                })}

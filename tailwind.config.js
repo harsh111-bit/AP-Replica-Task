@@ -5,7 +5,11 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      aspectRatio: {
+        '16/9': '16 / 9',
+      },
+    },
     screens: {
       'tab': '768px',
       'laptop': '1024px',
