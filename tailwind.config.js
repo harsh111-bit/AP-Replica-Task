@@ -5,9 +5,18 @@ module.exports = {
   },
   purge: [],
   theme: {
+    maxWidth: {
+      '140': '140px',
+      '896': '896px',
+
+    },
     extend: {
       aspectRatio: {
         '16/9': '16 / 9',
+      },
+      width: {
+        '33': '33%',
+        '30': '30%',
       },
     },
     screens: {
