@@ -6,6 +6,7 @@ interface CourseCardInfo {
     amount: number | undefined;
     time: number | undefined;
     seq?: number | undefined;
+    imageURL?: string | undefined;
 }
 
 const CourseCard: React.FC<CourseCardInfo> = (props) => {
@@ -25,20 +26,46 @@ if (time !== undefined) {
 }
 
  return (
-    <div className={'pt-4 px-4 flex flex-col items-start hover:course-card-hover'}>
-        <div className={'self-start pb-2'}>
+    <div className={'pt-6 px-4 mb-6 flex flex-col items-start cursor-pointer laptop:rounded-lg course-card-hover'}>
+        {!!props.seq 
+        ?
+        <div className={'self-start pb-6'}>
             <div id="part-pointer" 
-                 className={'h-6 relative flex items-center justify-center rounded px-2 text-center text-xs font-medium course-seq'}></div>
-                <span className="font-hi">कोर्स {props.seq} &nbsp;</span>
+                 className={'h-9 relative flex items-center justify-center rounded px-2 pt-1 text-center text-xl font-medium course-seq'}>
+                    <span className="font-hi flex items-center">कोर्स {props.seq} &nbsp;</span>
+            </div>
         </div>
-        <span className={'text-lg font-medium leading-normal text-gray-title font-hi'}>{props.title}</span>
-        <span className={'text-sm leading-normal text-gray-subtitle laptop:text-base font-hi'}>{props.subtitle}</span>
-        <span className={'pt-1 text-xs text-gray-subtitle laptop:text-sm'}>{timeIntoHoursAndMinutes(props.time)}</span>
-        <span className={'pt-1 text-xs text-gray-subtitle laptop:text-sm'}>Contribution: {props.amount}</span>
-        <div className={'inline-flex items-center space-x-3 text-xs font-medium'}>
-            <span className={'cursor-pointer rounded text-center'}>ADD TO CART</span>
-            <span className={'cursor-pointer rounded text-center'}>ENROL</span>
+        :
+        <></>
+        }
+        <div className={'flex items-start space-x-4'}>
+            {!!props.imageURL
+            ?
+            <div className='w-1/3 flex-shrink-0'>
+                <div className={'relative h-full w-full overflow-hidden rounded'}>
+                    <img src={props.imageURL} 
+                         alt="course"
+                         className={'h-full w-full object-cover'} />
+                </div>
+            </div>
+            :
+            <></>
+            }
+            <div className={'flex flex-col'}>
+                <span className={'text-xl laptop:text-2xl font-semibold leading-normal text-gray-title font-hi tracking-wider pb-2'}>{props.title}</span>
+                <span className={'text-xl leading-normal text-gray-subtitle laptop:text-2xl font-hi tracking-wider pb-2'}>{props.subtitle}</span>
+                <span className={'pt-1 text-lg tab:text-xl text-gray-subtitle pb-1.5'}>{timeIntoHoursAndMinutes(props.time)}</span>
+                <span className={'pt-1 text-lg tab:text-xl text-gray-subtitle pb-4'}>Contribution: {props.amount}</span>
+                <div className={'inline-flex items-center space-x-3 text-lg font-medium text-brand-600'}>
+                    <span className={'cursor-pointer rounded text-center'}>ADD TO CART</span>
+                    <div className={'self-stretch py-2'}>
+                        <div className={'w-px bg-gray-separator mini-separator'} />
+                    </div>
+                    <span className={'cursor-pointer rounded text-center'}>ENROL</span>
+                </div>
+            </div>
         </div>
+        
     </div>
  )
 }

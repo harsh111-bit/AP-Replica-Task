@@ -59,6 +59,10 @@
   background-color: rgba(202, 213, 225, 1);
 }
 
+.mini-separator {
+  height: 20px;
+}
+
 .green {
   color: green;
 }
@@ -85,7 +89,7 @@
     border-bottom: 12px solid transparent;
 }
 
-.course-card-hover {
+.course-card-hover:hover {
   background-color: rgba(241, 245, 249, 1);
 }
 
@@ -99,5 +103,13 @@
 
 .bg-green-background {
   background-color: rgba(213, 237, 225, 1);
+}
+
+.hover-text-brand-600:hover {
+  color: rgba(234, 88, 12, 1);
+}
+
+.hover-bg-slate-100:hover {
+  background-color: rgba(241, 245, 249, 1);
 }
 

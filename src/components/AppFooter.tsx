@@ -20,10 +20,10 @@ useEffect(() => {
                <div className={'font-semibold text-gray-title'}>
                   <span className={'font-en'}>LANGUAGE</span>
                </div>
-               <div className={'cursor-pointer hover:text-brand-600'}>
+               <div className={'cursor-pointer hover-text-brand-600'}>
                   <span className={'font-en'}>ENGLISH</span>
                </div>
-               <div className={'cursor-pointer hover:text-brand-600'}>
+               <div className={'cursor-pointer hover-text-brand-600'}>
                   <span className={'font-en'}>HINDI</span>
                </div>
             </div>
@@ -34,7 +34,7 @@ useEffect(() => {
                </div>
                {tags?.map((c) => {
                   return (
-                     <div className={'hover:text-brand-600'} key={c.tagId}>
+                     <div className={'hover-text-brand-600'} key={c.tagId}>
                         <a href="#"> <span className={'font-en'}>{c.name.english}</span></a>
                      </div>
                   )
@@ -68,7 +68,7 @@ useEffect(() => {
                <div className={'font-semibold text-gray-title tab:pb-0'}>
                   <span className={'font-en'}>CONTACT US</span>
                </div>
-               <div className={'flex items-center hover:text-brand-600'}>
+               <div className={'flex items-center hover-text-brand-600'}>
                   <div className={'pr-2'}>
                     <MailOutlined />
                   </div>
@@ -78,7 +78,7 @@ useEffect(() => {
                      </div>
                   </a>
                </div>
-               <div className={'flex items-center hover:text-brand-600'}>
+               <div className={'flex items-center hover-text-brand-600'}>
                   <div className={'pr-2'}>
                      <PhoneFilled />
                   </div>
@@ -116,11 +116,11 @@ useEffect(() => {
                   <span className={'font-en'}>Copyright © 2022 PrashantAdvait Foundation</span>
                </div>
                <div className={'flex space-x-2 pt-2 tab:pt-0'}>
-                  <a href="https://acharyaprashant.org/documents/terms-conditions.pdf" target="_blank" rel="noreferrer" className={'cursor-pointer hover:text-brand-600'}>
+                  <a href="https://acharyaprashant.org/documents/terms-conditions.pdf" target="_blank" rel="noreferrer" className={'cursor-pointer hover-text-brand-600'}>
                      <span className={'font-en'}>Terms &amp; Conditions</span>
                   </a>
                   <div>|</div>
-                  <a href="https://acharyaprashant.org/documents/privacy-policy.pdf" target="_blank" rel="noreferrer" className={'cursor-pointer hover:text-brand-600'}>
+                  <a href="https://acharyaprashant.org/documents/privacy-policy.pdf" target="_blank" rel="noreferrer" className={'cursor-pointer hover-text-brand-600'}>
                      <span className={'font-en'}>Privacy Policy</span>
                   </a>
                </div>

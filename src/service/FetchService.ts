@@ -1,5 +1,6 @@
 import axios from "axios";
 import { DetailsProps } from "../components/Details";
+import { Utils } from "../utils/utils";
 
 const coursesEndpoint = 'https://api.acharyaprashant.org/v2/legacy/courses/series/optuser/course-series-eeb9d3';
 
@@ -9,10 +10,10 @@ export const FetchService = {
           return axios.get(coursesEndpoint)
              .then((res) => {
                  return {
-                    imageURL: res.data.details.thumbnail.domain + '/' + res.data.details.thumbnail.basePath + '/' + res.data.details.thumbnail.qualities[0].toString() + '/' + res.data.details.thumbnail.key,
+                    imageURL:  Utils.joinedImageURL(res.data.details.thumbnail.domain, res.data.details.thumbnail.basePath, res.data.details.thumbnail.qualities[0], res.data.details.thumbnail.key),
                     title: res.data.details.title,
                     subtitle: res.data.details.subtitle,
-                    content: res.data.details.description
+                    content: res.data.details.description,
                  }
              })
              .catch((c) => console.log("ERROR-01", c));
