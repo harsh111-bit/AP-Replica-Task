@@ -56,7 +56,7 @@ function timeIntoHoursAndMinutes(time: number): string {
                 <span className={'text-xl laptop:text-2xl font-semibold leading-normal text-gray-title font-hi tracking-wider pb-2'}>{props.title}</span>
                 <span className={'text-xl leading-normal text-gray-subtitle laptop:text-2xl font-hi tracking-wider pb-2'}>{props.subtitle}</span>
                 <span className={'pt-1 text-lg tab:text-xl text-gray-subtitle pb-1.5'}>{timeIntoHoursAndMinutes(props.time)}</span>
-                <span className={'pt-1 text-lg tab:text-xl text-gray-subtitle pb-4'}>Contribution: {props.amount}</span>
+                <span className={'pt-1 text-lg tab:text-xl text-gray-subtitle pb-4'}>Contribution: &#8377;{props.amount}</span>
                 <div className={'inline-flex items-center space-x-3 text-lg font-medium text-brand-600'}>
                     <span className={'cursor-pointer rounded text-center'}>ADD TO CART</span>
                     <div className={'self-stretch py-2'}>
