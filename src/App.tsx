@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex min-h-screen w-full flex-col justify-between">
+    <div className="flex min-h-screen w-full flex-col justify-between overflow-x-hidden">
       {isLoaded 
       ?
      <>
