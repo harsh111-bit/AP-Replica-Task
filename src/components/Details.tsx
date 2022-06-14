@@ -32,7 +32,7 @@ const Details: React.FC<DetailsProps | void | undefined> = (props) => {
                </div>
             </div>
          </div>
-         <div className={'flex flex-col self-stretch pt-4 text-sm tab:pl-6 tab:pt-0 laptop:text-lg'}>
+         <div className={'flex flex-col self-stretch pt-4 text-sm tab:pl-6 tab:pt-0 laptop:text-lg tab:w-full'}>
             <div className={'text-xl font-bold text-gray-title laptop:text-2xl pb-2 tab:pb-4'}>
                <span className={'font-hi'}>{props!.subtitle}</span>
             </div>

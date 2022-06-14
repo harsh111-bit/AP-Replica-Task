@@ -16,7 +16,7 @@ const AppHeader: React.FC = () => {
                  alt="Solutions-Logo"
                  className={'w-20 object-contain laptop:w-24'} />
          </div>
-         <div className={'hidden max-w-896 flex-grow px-8 tab:block'}>
+         <div className={'hidden max-w-350 desk:max-w-896 flex-grow px-8 tab:block'}>
             <div className={'items-center rounded border border-gray-disabled shadow-sm'}>
                <div className={'relative'}>
                   <div className={'relative flex w-full flex-row'}>

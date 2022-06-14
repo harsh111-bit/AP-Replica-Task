@@ -8,6 +8,7 @@ module.exports = {
     maxWidth: {
       '140': '140px',
       '896': '896px',
+      '350': '350px',
 
     },
     extend: {
