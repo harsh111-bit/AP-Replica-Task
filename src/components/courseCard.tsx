@@ -5,11 +5,15 @@ interface CourseCardInfo {
     subtitle: string;
     amount: number;
     time: number;
+    lang: 'hindi' | 'english';
     seq?: number;
     imageURL?: string;
 }
 
 const CourseCard: React.FC<CourseCardInfo> = (props) => {
+
+const apHindiSignURL = "https://solutions.acharyaprashant.org/images/ic_apsignature_hindi.png";
+const apEnglishSignURL = "https://solutions.acharyaprashant.org/images/ic_apsignature_english.png";
 
 function timeIntoHoursAndMinutes(time: number): string {
     let hr = Math.floor(time);
@@ -39,6 +43,10 @@ function timeIntoHoursAndMinutes(time: number): string {
                     <img src={props.imageURL} 
                          alt="course"
                          className={'h-full w-full object-cover'} />
+                    <div style={{height: '33%'}} className={'absolute left-0 bottom-0 w-full bg-gradient-to-t from-black align-bottom text-base font-semibold text-white'} />
+                    <img src={props.lang === 'hindi' ? apHindiSignURL : apEnglishSignURL}
+                        alt="AP-Sign"
+                        className={'absolute ap-sign-small object-contain'} />
                 </div>
             </div>
             :

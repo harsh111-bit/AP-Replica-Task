@@ -29,7 +29,8 @@ useEffect(() => {
                            amount={course.amount} 
                            time={course.courseHours}
                            seq={course.series.order.seq}
-                           key={course.id}/>
+                           key={course.id}
+                           lang={course.language}/>
             )
          })}
       </div>
@@ -48,14 +49,16 @@ useEffect(() => {
                                subtitle={relatedCourse.subtitle}
                                imageURL={Utils.joinedImageURL(relatedCourse.thumbnail.domain, relatedCourse.thumbnail.basePath, relatedCourse.thumbnail.qualities[0], relatedCourse.thumbnail.key)}
                                coursesCount={relatedCourse.coursesCount}
-                               key={relatedCourse.id} />
+                               key={relatedCourse.id}
+                               lang={relatedCourse.language} />
                   :
                   <CourseCard title={relatedCourse.title} 
                            subtitle={relatedCourse.subtitle} 
                            amount={relatedCourse.amount} 
                            time={relatedCourse.courseHours}
                            imageURL={Utils.joinedImageURL(relatedCourse.thumbnail.domain, relatedCourse.thumbnail.basePath, relatedCourse.thumbnail.qualities[0], relatedCourse.thumbnail.key)}
-                           key={relatedCourse.id}/>
+                           key={relatedCourse.id}
+                           lang={relatedCourse.language}/>
          )
         })}
       </div>

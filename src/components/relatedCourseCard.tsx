@@ -5,9 +5,11 @@ import * as React from 'react';
     subtitle: string;
     imageURL: string;
     coursesCount: number;
+    lang: 'hindi' | 'english';
 }
 
 const apHindiSignURL = "https://solutions.acharyaprashant.org/images/ic_apsignature_hindi.png";
+const apEnglishSignURL = "https://solutions.acharyaprashant.org/images/ic_apsignature_english.png";
 
 const RealtedCourseCard: React.FC<RelatedCourseCardInfo> = (props) => {
  return (
@@ -20,7 +22,13 @@ const RealtedCourseCard: React.FC<RelatedCourseCardInfo> = (props) => {
                         <div className="relative h-full stacked-images">
                             <img src={props.imageURL} alt="stacked-1" className='absolute px-10px rounded-md'/>
                             <img src={props.imageURL} alt="stacked-2" className="absolute px-5px rounded-md img-2" />
-                            <img src={props.imageURL} alt="stacked-3" className="absolute rounded-md img-3" />
+                            <div className={'relative h-55% desk:h-full w-full'}>
+                                <img src={props.imageURL} alt="stacked-3" className="absolute rounded-md img-3" />
+                                <div style={{height: '33%'}} className={'absolute left-0 bottom-0 w-full bg-gradient-to-t from-black align-bottom text-base font-semibold text-white'} />
+                                <img src={props.lang === 'hindi' ? apHindiSignURL : apEnglishSignURL}
+                                    alt="AP-Sign"
+                                    className={'absolute ap-sign-small object-contain'} />
+                            </div>
                         </div>
                     </div>
                 </div>

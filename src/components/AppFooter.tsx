@@ -12,7 +12,7 @@ useEffect(() => {
 
  return (
     <div className={'flex flex-col items-center mt-12 bg-slate-50 px-4 pb-7 tab:px-0 tab:pt-16'}>
-         <div className={'w-full flex-col space-y-5 text-gray-subtitle tab:flex tab:flex-row tab:justify-center tab:space-x-12 tab:space-y-0 laptop:space-x-32 desk:space-x-60'}>
+         <div className={'w-full flex-col space-y-5 text-gray-subtitle tab:flex tab:flex-row tab:justify-center tab:space-x-8 tab:space-y-0 laptop:space-x-32 desk:space-x-60'}>
 
             <div className={'hidden space-y-2 tab:block'}>
                <div className={'text-xl font-medium text-gray-title'}>

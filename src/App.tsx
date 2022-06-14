@@ -1,4 +1,3 @@
-import { Spin } from 'antd';
 import { useEffect, useState } from 'react';
 import AppFooter from './components/AppFooter';
 import AppHeader from './components/AppHeader';
@@ -29,7 +28,6 @@ function App() {
       </>
       :
       <div className='flex text-5xl text-brand-600 font-bold items-center justify-center w-full h-full mt-10'>
-        {/* <Spin size='large'/> */}
         <span className='font-en'>LOADING...</span>
       </div>
       
