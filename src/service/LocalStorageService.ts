@@ -27,18 +27,6 @@ export class LocalStorageService {
         return JSON.parse(localStorage.getItem('tags') as string);
     }
 
-    static hasCourses(): boolean {
-        return !!localStorage.getItem('courses');
-    }
-
-    static hasTags(): boolean {
-        return !!localStorage.getItem('tags');
-    }
-
-    static hasFAQs(): boolean {
-        return !!localStorage.getItem('faqs');
-    }
-
     static getDetails() {
         const details = JSON.parse(localStorage.getItem('courses') as string).details;
         return {
@@ -62,6 +50,10 @@ export class LocalStorageService {
         return {
             relatedCourses: data.relatedContent
           }
+    }
+
+    static clearStorage() {
+        localStorage.clear();
     }
 
 

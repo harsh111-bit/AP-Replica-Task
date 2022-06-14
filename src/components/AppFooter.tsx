@@ -4,7 +4,7 @@ import { MailOutlined, PhoneFilled, WhatsAppOutlined } from '@ant-design/icons';
 import { LocalStorageService } from '../service/LocalStorageService';
 
 const AppFooter: React.FC = () => {
-const [tags, setTags] = useState<any[] | void>();
+const [tags, setTags] = useState<any[]>();
 useEffect(() => {
  setTags(LocalStorageService.getTags());
 }, []);

@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-export interface RelatedCourseCardInfo {
-    title: string | undefined;
-    subtitle: string | undefined;
-    imageURL: string | undefined;
-    coursesCount: number | undefined;
+ interface RelatedCourseCardInfo {
+    title: string;
+    subtitle: string;
+    imageURL: string;
+    coursesCount: number;
 }
 
 const apHindiSignURL = "https://solutions.acharyaprashant.org/images/ic_apsignature_hindi.png";
@@ -16,41 +16,11 @@ const RealtedCourseCard: React.FC<RelatedCourseCardInfo> = (props) => {
             <div className={'flex w-1/3 flex-col flex-shrink-0 items-start space-y-1'}>
                 <div className={'w-full'} style={{height: '168px'}}>
                     <div className={'relative aspect-[16/9] w-full h-full overflow-hidden'}>
-                        
-                        <div className={'absolute inset-0 mx-2 border border-t border-white'}>
-                            <div className={'relative w-full h-full overflow-hidden rounded'}>
-                                <img src={props.imageURL} 
-                                     alt="Thumbnail"
-                                     className={'h-full w-full object-cover'}  />
-                                <div className={'absolute left-0 bottom-0 h-1/3 w-full bg-gradient-to-t from-black align-bottom text-base font-semibold text-white'} />
-                                <img src={apHindiSignURL} 
-                                     alt="AP-Hindi-Sign"
-                                     className={'absolute right-1 bottom-1 object-contain h-7'} />
-                            </div>
-                        </div>
-                       
-                        <div className={'absolute inset-0 top-1 mx-1 border border-t border-white'}>
-                            <div className={'relative h-full w-full overflow-hidden rounded'}>
-                                <img src={props.imageURL} 
-                                     alt="Thumbnail"
-                                     className={'h-full w-full object-cover'}  />
-                                <div className={'absolute left-0 bottom-0 h-1/3 w-full bg-gradient-to-t from-black align-bottom text-base font-semibold text-white'} />
-                                <img src={apHindiSignURL} 
-                                     alt="AP-Hindi-Sign"
-                                     className={'absolute right-1 bottom-1 object-contain h-7'} />
-                            </div>
-                        </div>
-                        
-                        <div className={'absolute inset-0 top-2 border border-t border-white'}>
-                            <div className={'relative h-full w-full overflow-hidden rounded'}>
-                                <img src={props.imageURL} 
-                                     alt="Thumbnail"
-                                     className={'h-full w-full object-cover'}  />
-                                <div className={'absolute left-0 bottom-0 h-1/3 w-full bg-gradient-to-t from-black align-bottom text-base font-semibold text-white'} />
-                                <img src={apHindiSignURL} 
-                                     alt="AP-Hindi-Sign"
-                                     className={'absolute right-1 bottom-1 object-contain h-7'} />
-                            </div>
+
+                        <div className="relative h-full stacked-images">
+                            <img src={props.imageURL} alt="stacked-1" className='absolute rounded-md'/>
+                            <img src={props.imageURL} alt="stacked-2" className="absolute rounded-md img-2" />
+                            <img src={props.imageURL} alt="stacked-3" className="absolute rounded-md img-3" />
                         </div>
                     </div>
                 </div>

@@ -3,10 +3,14 @@ import { LocalStorageService } from "./LocalStorageService";
 
 export const FetchService = {
 
-     fetchCourses: () => {
-           axios.get('https://api.acharyaprashant.org/v2/legacy/courses/series/optuser/course-series-eeb9d3')
+     fetchCourses: (): Promise<boolean | void> => {
+           return axios.get('https://api.acharyaprashant.org/v2/legacy/courses/series/optuser/course-series-eeb9d3')
              .then((res) => {
-                 LocalStorageService.setCourses(res.data);
+               if (!!res) {
+                  LocalStorageService.setCourses(res.data);
+                  return true;
+               }
+               return false;
              })
              .catch((c) => console.log("ERROR-01", c));
      },

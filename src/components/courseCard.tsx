@@ -1,28 +1,21 @@
 import * as React from 'react';
 
 interface CourseCardInfo {
-    title: string | undefined;
-    subtitle: string | undefined;
-    amount: number | undefined;
-    time: number | undefined;
-    seq?: number | undefined;
-    imageURL?: string | undefined;
+    title: string;
+    subtitle: string;
+    amount: number;
+    time: number;
+    seq?: number;
+    imageURL?: string;
 }
 
 const CourseCard: React.FC<CourseCardInfo> = (props) => {
 
-function timeIntoHoursAndMinutes(time: number | undefined): string {
-let hour;    
-let minutes;
-if (time !== undefined) {
-    const stringTime = time.toString(); 
-    hour = stringTime.split('.')[0];
-    minutes = +stringTime.substring(stringTime.indexOf('.') + 1) * 60;
-    return hour + " hours " + minutes.toString() + " minutes"
-}  else {
-    return "UNDEFINED"
-}
-
+function timeIntoHoursAndMinutes(time: number): string {
+    let hr = Math.floor(time);
+    let min = parseFloat((time % 1).toFixed(4)) * 60;
+    min = Math.floor(min);
+    return hr + ' hours ' + min + ' minutes'
 }
 
  return (
