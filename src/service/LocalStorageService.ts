@@ -7,8 +7,36 @@ export class LocalStorageService {
         }
     }
 
+    static setTags(data: any) {
+        if (data) {
+            localStorage.setItem('tags', JSON.stringify(data));
+        }
+    }
+
+    static setFAQs(data: any) {
+        if (data) {
+            localStorage.setItem('faqs', JSON.stringify(data));
+        }
+    }
+
+    static getFAQs() {
+        return JSON.parse(localStorage.getItem('faqs') as string);
+    }
+
+    static getTags() {
+        return JSON.parse(localStorage.getItem('tags') as string);
+    }
+
     static hasCourses(): boolean {
         return !!localStorage.getItem('courses');
+    }
+
+    static hasTags(): boolean {
+        return !!localStorage.getItem('tags');
+    }
+
+    static hasFAQs(): boolean {
+        return !!localStorage.getItem('faqs');
     }
 
     static getDetails() {

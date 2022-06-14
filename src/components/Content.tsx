@@ -14,7 +14,15 @@ const [details, setDetails] = useState<DetailsProps | void>();
 const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
 useEffect(() => {
- FetchService.fetchDetails();
+ if (!LocalStorageService.hasCourses()) {
+   FetchService.fetchCourses();
+ }
+ if (!LocalStorageService.hasTags()) {
+   FetchService.fetchTags();
+ } 
+ if (!LocalStorageService.hasFAQs()) {
+    FetchService.fetchFAQs();
+ }
  setDetails(LocalStorageService.getDetails());
  setIsLoaded(LocalStorageService.hasCourses);
 }, []);

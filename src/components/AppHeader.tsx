@@ -62,8 +62,7 @@ const AppHeader: React.FC = () => {
 
     </div>
      </div>
-   </div>
-    
+   </div>    
  )
 }
 

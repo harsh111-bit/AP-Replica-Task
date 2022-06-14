@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { FetchService } from '../service/FetchService';
 import {UpOutlined, DownOutlined} from '@ant-design/icons';
+import { LocalStorageService } from '../service/LocalStorageService';
 
 
 const FAQ: React.FC = () => {
@@ -9,12 +9,7 @@ const [opened, setOpened] = useState<any>(null);
 
 const [faqs, setFaqs] = useState<{question: string, answer: string}[]>();
 useEffect(() => {
- FetchService.fetchFAQs()
-             .then((res) => {
-               if (res) {
-                  setFaqs(res.faqs);
-               }
-             });
+  setFaqs(LocalStorageService.getFAQs());
 }, []);
 
 const toggle = (i: any) => {

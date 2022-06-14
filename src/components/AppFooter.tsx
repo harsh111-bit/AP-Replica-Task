@@ -1,15 +1,12 @@
 import * as React from 'react';
 import {useState, useEffect} from 'react';
 import { MailOutlined, PhoneFilled, WhatsAppOutlined } from '@ant-design/icons';
-import { FetchService } from '../service/FetchService';
+import { LocalStorageService } from '../service/LocalStorageService';
 
 const AppFooter: React.FC = () => {
 const [tags, setTags] = useState<any[] | void>();
 useEffect(() => {
- FetchService.fetchTags()
-             .then((res) => {
-               setTags(res);
-             });
+ setTags(LocalStorageService.getTags());
 }, []);
 
  return (
