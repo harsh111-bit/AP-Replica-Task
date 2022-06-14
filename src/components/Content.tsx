@@ -7,33 +7,30 @@ import Breadcrumbs from './Breadcrumbs';
 import SocialMedia from './SocialMedia';
 import Courses from './Courses';
 import FAQ from './FAQ';
+import { LocalStorageService } from '../service/LocalStorageService';
 
 const Content: React.FC = () => {
 const [details, setDetails] = useState<DetailsProps | void>();
-const [isDetailsLoaded, setIsDetailsLoaded] = useState<boolean>(false);
+const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
 useEffect(() => {
- FetchService.fetchDetails().then((res) => {
-   if (res) {
-      setDetails(res);
-      setIsDetailsLoaded(true);
-   }
- });
+ FetchService.fetchDetails();
+ setDetails(LocalStorageService.getDetails());
+ setIsLoaded(LocalStorageService.hasCourses);
 }, []);
 
  return (
     <div className={'flex flex-col'}>
-      {isDetailsLoaded ? 
-      <>
-       <Breadcrumbs title={details?.title}/>
-       <Details title={details?.title} subtitle={details?.subtitle} content={details?.content} imageURL={details?.imageURL}/> 
-       <SocialMedia/>
-       <Courses/>
-       <FAQ/>
+      {isLoaded ? 
+       <>
+         <Breadcrumbs title={details?.title}/>
+         <Details title={details?.title} subtitle={details?.subtitle} content={details?.content} imageURL={details?.imageURL}/> 
+         <SocialMedia/>
+         <Courses/>
+         <FAQ/>
        </>
        :
-       <Spin />}
-      
+       <Spin className={'flex jusify-center items-center'}/>}
     </div>
  )
 }

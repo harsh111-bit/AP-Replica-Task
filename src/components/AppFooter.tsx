@@ -92,7 +92,7 @@ useEffect(() => {
                      <div className={'hidden tab:block text-xl'}>
                         <span className={'font-en'}>Call:</span>
                      </div>
-                     <div>
+                     <div className='text-xl'>
                         <span className={'font-en'}>&nbsp;+91 9650585100</span>
                      </div>
                   </a>
@@ -105,7 +105,7 @@ useEffect(() => {
                      <div className={'hidden tab:block cursor-text text-xl'}>
                         <span className={'font-en'}>WhatsApp:</span>
                      </div>
-                     <div className='cursor-text'>
+                     <div className='cursor-text text-xl'>
                         <span className={'font-en'}>&nbsp;+91 9650585100</span>
                      </div>
                   </a>

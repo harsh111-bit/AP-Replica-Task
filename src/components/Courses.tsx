@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { FetchService } from '../service/FetchService';
+import { LocalStorageService } from '../service/LocalStorageService';
 import { Utils } from '../utils/utils';
 import CourseCard from './courseCard';
 import RealtedCourseCard from './relatedCourseCard';
+
 const Courses: React.FC = () => {
 
 const [coursesCount, setCoursesCount] = useState<number>();
@@ -11,20 +12,9 @@ const [courses, setCourses] = useState<any[]>();
 const [relatedCourses, setRelatedCourses] = useState<any[]>();
 
 useEffect(() => {
-  FetchService.fetchCourses()
-              .then((res) => {
-               if (res) {
-                  setCoursesCount(res.coursesCount);
-                  setCourses(res.courses);
-               }
-              });
-
-   FetchService.fetchRelatedCourses()
-               .then((res) => {
-                  if (res) {
-                     setRelatedCourses(res.relatedCourses);
-                  }
-               });
+   setCoursesCount(LocalStorageService.getCourses().coursesCount);
+   setCourses(LocalStorageService.getCourses().courses);
+   setRelatedCourses(LocalStorageService.getRelatedCourses().relatedCourses);
 }, []);
 
  return (
