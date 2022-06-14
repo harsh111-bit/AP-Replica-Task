@@ -2,6 +2,7 @@ import * as React from 'react';
 import {useState, useEffect} from 'react';
 import { MailOutlined, PhoneFilled, WhatsAppOutlined } from '@ant-design/icons';
 import { LocalStorageService } from '../service/LocalStorageService';
+import {GoogleSquareFilled, AppleFilled} from '@ant-design/icons';
 
 const AppFooter: React.FC = () => {
 const [tags, setTags] = useState<any[]>();
@@ -11,7 +12,7 @@ useEffect(() => {
 
  return (
     <div className={'flex flex-col items-center mt-12 bg-slate-50 px-4 pb-7 tab:px-0 tab:pt-16'}>
-         <div className={'w-full flex-col space-y-5 text-sm text-gray-subtitle tab:flex tab:flex-row tab:justify-center tab:space-x-12 tab:space-y-0 laptop:space-x-32 desk:space-x-60'}>
+         <div className={'w-full flex-col space-y-5 text-gray-subtitle tab:flex tab:flex-row tab:justify-center tab:space-x-12 tab:space-y-0 laptop:space-x-32 desk:space-x-60'}>
 
             <div className={'hidden space-y-2 tab:block'}>
                <div className={'text-xl font-medium text-gray-title'}>
@@ -38,7 +39,7 @@ useEffect(() => {
                })}
             </div>
 
-            <div className=''>
+            <div>
                <div className={'pt-2 font-semibold text-gray-title tab:hidden'}>
                   <span className={'font-en'}>DOWNLOAD ACHARYA PRASHANT APP</span>
                </div>
@@ -46,23 +47,23 @@ useEffect(() => {
                   <span className={'font-en'}>DOWNLOAD APP</span>
                </div>
                <div className={'hidden items-center pt-3 tab:flex'}>
-                  <img src="/assets/images/ap-face.jpg" alt="Acharya Prashant" className={'mr-2 h-6 w-6'}/>
+                  <img src="/assets/images/ap-face.jpg" alt="Acharya Prashant" className={'mr-2 h-8 w-8'}/>
                   <div>
                      <span className={'text-xl font-en'}>Acharya Prashant</span>
                   </div>
                </div>
-               <div className={'flex flex-col'}>
+               <div className='flex space-x-4'>
                   <a href="https://play.google.com/store/apps/details?id=org.acharyaprashant.apbooks" 
                      target="_blank" 
                      rel="noreferrer"
-                     className='w-33'>
-                     <img src="/assets/images/g-play.png" alt="Google-Play" />
+                     className='text-gray-subtitle text-4xl hover-text-brand-600'>
+                     <GoogleSquareFilled />
                   </a>
                   <a href="https://apps.apple.com/in/app/acharya-prashant/id1603611866"
-                     className='w-30 set-app-store-icon' 
+                     className='text-gray-subtitle text-4xl hover-text-brand-600' 
                      target="_blank" 
                      rel="noreferrer">
-                     <img src="/assets/images/app-store.png" alt="Apple-Store" className='w-full'/>
+                     <AppleFilled />
                   </a>
                </div>
             </div>

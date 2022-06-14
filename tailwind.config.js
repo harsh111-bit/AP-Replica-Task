@@ -14,9 +14,9 @@ module.exports = {
       aspectRatio: {
         '16/9': '16 / 9',
       },
-      width: {
-        '33': '33%',
-        '30': '30%',
+      padding: {
+        '5px': '5px',
+        '10px': '10px',
       },
     },
     screens: {

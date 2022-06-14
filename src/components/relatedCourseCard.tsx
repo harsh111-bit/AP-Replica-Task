@@ -18,8 +18,8 @@ const RealtedCourseCard: React.FC<RelatedCourseCardInfo> = (props) => {
                     <div className={'relative aspect-[16/9] w-full h-full overflow-hidden'}>
 
                         <div className="relative h-full stacked-images">
-                            <img src={props.imageURL} alt="stacked-1" className='absolute rounded-md'/>
-                            <img src={props.imageURL} alt="stacked-2" className="absolute rounded-md img-2" />
+                            <img src={props.imageURL} alt="stacked-1" className='absolute px-10px rounded-md'/>
+                            <img src={props.imageURL} alt="stacked-2" className="absolute px-5px rounded-md img-2" />
                             <img src={props.imageURL} alt="stacked-3" className="absolute rounded-md img-3" />
                         </div>
                     </div>
